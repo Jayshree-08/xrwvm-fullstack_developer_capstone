@@ -1,0 +1,54 @@
+Workflow: Lint Code
+Run ID: 11482091482
+Status: Completed
+Conclusion: Success
+
+Jobs:
+- Lint Python Files: Success
+- Lint JavaScript Files: Success
+
+Step Output (lint_python):
+--------------------------
+1. Checkout Repository
+   Run actions/checkout@v3
+   Syncing repository: Jayshree-08/xrwvm-fullstack_developer_capstone
+   HEAD is now at a7c8e91 Merge pull request #1 from Jayshree-08/main
+
+2. Set up Python
+   Run actions/setup-python@v4
+   Version: 3.11.9
+   Successfully set up Python 3.11.9
+
+3. Install dependencies
+   Run python -m pip install --upgrade pip
+   pip install flake8
+   Successfully installed flake8-7.1.1 pyflakes-3.2.0 pycodestyle-2.12.1 mccabe-0.7.0
+
+4. Print working directory
+   Run pwd
+   /home/runner/work/xrwvm-fullstack_developer_capstone/xrwvm-fullstack_developer_capstone
+
+5. Run Linter
+   Run pwd
+   /home/runner/work/xrwvm-fullstack_developer_capstone/xrwvm-fullstack_developer_capstone
+   find . -name "*.py" -not -path "*/.*" -exec flake8 --max-line-length=120 --ignore=E501,W503,F401,E402 {} +
+   Linted all the python files successfully
+
+Step Output (lint_js):
+----------------------
+1. Checkout Repository
+   Run actions/checkout@v3
+   Syncing repository: Jayshree-08/xrwvm-fullstack_developer_capstone
+
+2. Install Node.js
+   Run actions/setup-node@v3
+   Version: 18.20.4
+
+3. Install JSHint
+   Run npm install jshint --global
+   + jshint@2.13.6
+   added 27 packages in 2s
+
+4. Run Linter
+   Run find ./server/database -name "*.js" -exec jshint --extract=auto --esversion=8 {} +
+   Linted all the js files successfully
